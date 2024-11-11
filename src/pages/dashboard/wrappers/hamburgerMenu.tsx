@@ -16,11 +16,12 @@ import { useState } from "react";
 export const HamburgerMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <Menubar className="bg-opacity dark:text-stone-50 dark:bg-opacity border-none shadow-none">
+    <Menubar
+      onValueChange={() => setIsMenuOpen((prev) => !prev)}
+      className="bg-opacity dark:text-stone-50 dark:bg-opacity border-none shadow-none"
+    >
       <MenubarMenu>
-        <MenubarTrigger onClick={() => setIsMenuOpen((prev) => !prev)}>
-          {isMenuOpen ? <X /> : <Menu />}
-        </MenubarTrigger>
+        <MenubarTrigger>{isMenuOpen ? <X /> : <Menu />}</MenubarTrigger>
         <MenubarContent>
           <MenubarItem>
             Add New Employee <MenubarShortcut>⌘N</MenubarShortcut>
