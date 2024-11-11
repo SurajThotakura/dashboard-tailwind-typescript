@@ -5,6 +5,7 @@ import { TableWrapper } from "./wrappers/tableWrapper";
 import { TilesWrapper } from "./wrappers/tilesWrapper";
 import { EmployeePopupWrapper } from "./wrappers/employeePopupWrapper";
 import { TableGridToggle } from "./wrappers/tableGridToggle";
+import { FooterWrapper } from "./wrappers/footerWrapper";
 
 export type Employee = {
   id: number;
@@ -43,9 +44,11 @@ export const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-stone-900 transition-colors duration-200">
-      <HeaderWrapper />
-      <SubheaderWrapper />
-      <main className="container mx-auto px-4 py-8">
+      <div className="fixed w-screen">
+        <HeaderWrapper />
+        <SubheaderWrapper />
+      </div>
+      <main className="container mx-auto px-4 py-8 pt-[128px]">
         <TableGridToggle viewMode={viewMode} setViewMode={setViewMode} />
         {viewMode === "grid" ? (
           <TableWrapper
@@ -64,6 +67,7 @@ export const Dashboard = () => {
           closeDetailView={closeDetailView}
         />
       </main>
+      <FooterWrapper />
     </div>
   );
 };

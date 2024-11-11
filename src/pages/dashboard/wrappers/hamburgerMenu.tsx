@@ -24,10 +24,10 @@ export const HamburgerMenu = () => {
         <MenubarTrigger>{isMenuOpen ? <X /> : <Menu />}</MenubarTrigger>
         <MenubarContent>
           <MenubarItem>
-            Add New Employee <MenubarShortcut>⌘N</MenubarShortcut>
+            Bulk Upload <MenubarShortcut>⌘U</MenubarShortcut>
           </MenubarItem>
           <MenubarItem>
-            Remove Employee<MenubarShortcut>⌘W</MenubarShortcut>
+            Analyze<MenubarShortcut>⌘W</MenubarShortcut>
           </MenubarItem>
           <MenubarItem disabled>New Dashboard</MenubarItem>
           <MenubarSeparator />
